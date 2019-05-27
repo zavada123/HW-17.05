@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="calculator">
+        <!-- CALCULATOR FORM -->
+        <div class="calculator__row">
+            <p>Получился следующий результат:</p>
+            <input class="calculator__result" value="" id="resultCalc" type="text" disabled />
+        </div>
+        <form class="calculator__form">
+            <!-- CALCULATOR ROW -->
+            <div class="calculator__row">
+                <button type="button" id="one" data-id="number" class="calculator__key">1</button>
+                <button type="button" id="two" data-id="number" class="calculator__key">2</button>
+                <button type="button" id="three" data-id="number" class="calculator__key">3</button>
+                <button type="button" id="multiply" class="calculator__key">*</button>
+            </div>
+            <div class="calculator__row">
+                <button type="button" id="four" data-id="number" class="calculator__key">4</button>
+                <button type="button" id="five" data-id="number" class="calculator__key">5</button>
+                <button type="button" id="six" data-id="number" class="calculator__key">6</button>
+                <button type="button" id="divide" class="calculator__key">/</button>
+            </div>
+            <div class="calculator__row">
+                <button type="button" id="seven" data-id="number" class="calculator__key">7</button>
+                <button type="button" id="eight" data-id="number" class="calculator__key">8</button>
+                <button type="button" id="nine" data-id="number" class="calculator__key">9</button>
+                <button type="button" id="minus" class="calculator__key">-</button>
+            </div>
+            <div class="calculator__row">
+                <button type="button" id="plus" class="calculator__key">+</button>
+                <button type="button" id="zero" data-id="number" class="calculator__key">0</button>
+                <button type="button" id="total" class="calculator__key">=</button>
+                <button type="button" id="delete" class="calculator__key">Del</button>
+            </div>
+        </form>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
