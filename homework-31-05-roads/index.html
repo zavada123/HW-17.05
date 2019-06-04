@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        overflow: hidden;
+        margin: 0;
+    }
+    
+    .road-wrapper {
+        position: relative;
+        display: flex;
+        box-sizing: border-box;
+        min-height: 100vh;
+        height: 100%;
+    }
+    .road.active{
+    background: green;
+    }
+    .road-wrapper:after {
+        content: "";
+        position: absolute;
+        width: 104px;
+        top: calc(50% + 2px);
+        left: calc(50% + 2px);
+        height: 104px;
+        transform: translate(-50%, -50%);
+        background: #ccc;
+        background: green;
+        
+    }
+    
+    .traffic-button {
+        position: absolute;
+        width: 70px;
+        top: 50%;
+        left: 50%;
+        height: 30px;
+        font-size: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 3;
+        background: #ffffff;
+        padding: 5px;
+        border-radius: 5px;
+        cursor: pointer;
+        box-shadow: 0px 1px 5px 1px rgba(0, 0, 0, 0.4);
+        transform: translate(-50%, -50%);
+        transition: transform 0.15s ease;
+    }
+    
+    .traffic-button:hover {
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+    
+    .road {
+        transform-origin: 0 50%;
+        position: absolute;
+        width: calc(50% - 50px);
+        background: #ccc;
+        border-left: 2px solid #333;
+        border-right: 2px solid #333;
+        height: 100px;
+    }
+    
+    .road:nth-child(1) {
+        border-top: 2px solid #333;
+        border-bottom: 2px solid #333;
+        border-left: none;
+        border-right: none;
+        left: 0;
+        top: calc(50% - 52px)
+    }
+    
+    .road:nth-child(2) {
+        border-top: 2px solid #333;
+        border-bottom: 2px solid #333;
+        border-left: none;
+        border-right: none;
+        right: 0;
+        top: calc(50% - 52px)
+    }
+    
+    .road:nth-child(3) {
+        width: 100px;
+        left: calc(50% - 52px);
+        top: 0;
+        height: calc(50% - 50px);
+    }
+    
+    .road:nth-child(4) {
+        width: 100px;
+        bottom: 0;
+        left: calc(50% - 50px);
+        height: calc(50% - 49px);
+        z-index: 2;
+    }
+    
+    .traffic-lights {
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        width: 20px;
+        height: 70px;
+        background: #333;
+        border-radius: 20px;
+        padding: 10px 5px;
+    }
+    
+    .traffic-lights:nth-child(2) {
+        left: calc(50% - 100px);
+        top: calc(50% - 100px);
+    }
+    
+    .traffic-lights:nth-child(3) {
+        right: calc(50% - 110px);
+        top: calc(50% - 100px);
+    }
+    
+    .traffic-lights:nth-child(4) {
+        right: calc(50% - 110px);
+        bottom: calc(50% - 200px);
+    }
+    
+    .traffic-lights:nth-child(5) {
+        left: calc(50% - 100px);
+        bottom: calc(50% - 200px);
+    }
+    
+    .traffic-lights__circle {
+        border-radius: 50%;
+        width: 10px;
+        height: 10px;
+        padding: 5px;
+        margin: 2px;
+        opacity: 0.2;
+    }
+    .traffic-lights__circle.active{
+        opacity: 1;
+    }
+    .traffic-lights__circle:nth-child(1) {
+        background: green
+    }
+    
+    .traffic-lights__circle:nth-child(2) {
+        background: orange
+    }
+    
+    .traffic-lights__circle:nth-child(3) {
+        background: red;
+    }
+</style>
+
+<body>
+     <div class="road-wrapper">
+        <div class="road active" data-color="green"></div>
+        <div class="road active" data-color="green"></div>
+        <div class="road"  data-color="red"></div>
+        <div class="road" data-color="red"></div>
+        <div class="traffic-button">Change traffic</div>
+    </div>
+    <div class="traffic-lights">
+        <div class="traffic-lights__circle active" data-color="green"></div>
+        <div class="traffic-lights__circle" data-color="yellow"></div>
+        <div class="traffic-lights__circle" data-color="red"></div>
+    </div>
+    <div class="traffic-lights">
+        <div class="traffic-lights__circle" data-color="green"></div>
+        <div class="traffic-lights__circle" data-color="yellow"></div>
+        <div class="traffic-lights__circle active" data-color="red"></div>
+    </div>
+    <div class="traffic-lights">
+        <div class="traffic-lights__circle active" data-color="green"></div>
+        <div class="traffic-lights__circle" data-color="yellow"></div>
+        <div class="traffic-lights__circle" data-color="red"></div>
+    </div>
+    <div class="traffic-lights">
+        <div class="traffic-lights__circle" data-color="green"></div>
+        <div class="traffic-lights__circle" data-color="yellow"></div>
+        <div class="traffic-lights__circle active" data-color="red"></div>
+    </div>
+<input type="number" data-id="number-one">
+<input type="number" data-id="number-two">
+<button type="button">Сумма</button>
+    <script src="main.js"></script>
+</body>
+
+</html>
